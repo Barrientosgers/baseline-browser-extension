@@ -1,0 +1,24 @@
+{
+    "manifest_version": 3,
+    "name": "Baseline Feature Checker",
+    "version": "1.0",
+    "description": "A browser extension that checks web feature compatibility and uses AI to provide insights.",
+    "action": {
+      "default_popup": "index.html",
+      "default_icon": "icon.png"
+    },
+    "permissions": ["tabs", "scripting"],
+    "host_permissions": ["<all_urls>"],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+      }
+    ],
+    "icons": {
+      "128": "icon.png"
+    }
+  }
